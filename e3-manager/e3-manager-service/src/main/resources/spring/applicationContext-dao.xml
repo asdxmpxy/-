@@ -16,6 +16,7 @@
 	<context:component-scan base-package="cn.e3mall.mapper" />
 
 	<context:property-placeholder location="classpath:config/db.properties" />
+	
 	<!-- 数据库连接池 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		destroy-method="close">

@@ -1,7 +1,7 @@
 package cn.e3mall.mapper;
 
-import cn.e3mall.po.TbContent;
-import cn.e3mall.po.TbContentExample;
+import cn.e3mall.pojo.TbContent;
+import cn.e3mall.pojo.TbContentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

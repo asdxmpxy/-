@@ -9,6 +9,15 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<package name="cn.e3mall.pojo"/>
 	</typeAliases>
+	
+	<!-- <typeHandlers> 
+        <typeHandler javaType="cn.e3mall.pojo.TbItemParamItem" jdbcType="TEXT" 
+	    handler="com.jianbai.learn.ibatis.handler.JSONHandler"/> 
+	    <typeHandler javaType="java.util.Map" jdbcType="TEXT" 
+	    handler="com.jianbai.learn.ibatis.handler.JSONHandler"/> 
+	    <typeHandler javaType="java.util.List" jdbcType="TEXT" 
+	    handler="com.jianbai.learn.ibatis.handler.JSONHandler"/> 
+	</typeHandlers> -->
 	<plugins>
 		<plugin interceptor="com.github.pagehelper.PageHelper">
 			<property name="dialect" value="mysql"/>

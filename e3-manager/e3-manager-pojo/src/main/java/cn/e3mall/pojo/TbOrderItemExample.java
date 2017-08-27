@@ -1,4 +1,4 @@
-package cn.e3mall.po;
+package cn.e3mall.pojo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,7 +9,6 @@
 	<packaging>war</packaging>
 	<artifactId>e3-manager-service</artifactId>
 	<dependencies>
-
 		<dependency>
 			<groupId>cn.e3mall</groupId>
 			<artifactId>e3-manager-interface</artifactId>

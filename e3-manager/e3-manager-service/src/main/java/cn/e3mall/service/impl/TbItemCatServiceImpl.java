@@ -6,10 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.e3mall.common.pojo.E3Result;
 import cn.e3mall.common.pojo.TreeNodes;
 import cn.e3mall.mapper.TbItemCatMapper;
-import cn.e3mall.po.TbItemCat;
-import cn.e3mall.po.TbItemCatExample;
+import cn.e3mall.pojo.TbItemCat;
+import cn.e3mall.pojo.TbItemCatExample;
 import cn.e3mall.service.TbItemCatService;
 
 /**
@@ -48,5 +49,13 @@ public class TbItemCatServiceImpl implements TbItemCatService {
 			treeNodesList.add(node);
 		}
 		return treeNodesList;
+	}
+
+	@Override
+	public E3Result geTbItemCatById(Long catId) {
+		
+		TbItemCat itemCat = tbItemCatMapper.selectByPrimaryKey(catId);
+		
+		return new E3Result(itemCat);
 	}
 }
