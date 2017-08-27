@@ -43,7 +43,7 @@ var E3 = {
 	},
 	// 格式化价格
 	formatPrice : function(val,row){
-		return (val/1000).toFixed(2);
+		return (val/100).toFixed(2);
 	},
 	// 格式化商品的状态
 	formatItemStatus : function formatStatus(val,row){
@@ -107,7 +107,9 @@ var E3 = {
     	$(".selectItemCat").each(function(i,e){
     		var _ele = $(e);
     		if(data && data.cid){
-    			_ele.after("<span style='margin-left:10px;'>"+data.cid+"</span>");
+    			$.getJSON("/item/param/query/itemcatid/" + data.cid,function(node){
+    				_ele.after("<span style='margin-left:10px;'>"+node.data.name+"</span>");
+    			})
     		}else{
     			_ele.after("<span style='margin-left:10px;'></span>");
     		}
@@ -190,6 +192,7 @@ var E3 = {
     },
     
     changeItemParam : function(node,formId){
+    	//alert(formId)
     	$.getJSON("/item/param/query/itemcatid/" + node.id,function(data){
 			  if(data.status == 200 && data.data){
 				 $("#"+formId+" .params").show();

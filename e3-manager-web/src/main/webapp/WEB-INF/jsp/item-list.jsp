@@ -17,7 +17,7 @@
         </tr>
     </thead>
 </table>
-<div id="itemEditWindow" class="easyui-window" title="编辑商品" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/rest/page/item-edit'" style="width:80%;height:80%;padding:10px;">
+<div id="itemEditWindow" class="easyui-window" title="编辑商品" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/item-edit'" style="width:80%;height:80%;padding:10px;">
 </div>
 <script>
 
@@ -59,7 +59,7 @@
         			data.priceView = E3.formatPrice(data.price);
         			$("#itemeEditForm").form("load",data);
         			
-        			// 加载商品描述
+        		 	// 加载商品描述
         			$.getJSON('/rest/item/query/item/desc/'+data.id,function(_data){
         				if(_data.status == 200){
         					//UM.getEditor('itemeEditDescEditor').setContent(_data.data.itemDesc, false);
@@ -72,7 +72,7 @@
         				if(_data && _data.status == 200 && _data.data && _data.data.paramData){
         					$("#itemeEditForm .params").show();
         					$("#itemeEditForm [name=itemParams]").val(_data.data.paramData);
-        					$("#itemeEditForm [name=itemParamId]").val(_data.data.id);
+        					$("#itemeEditForm [name= ]").val(_data.data.id);
         					
         					//回显商品规格
         					 var paramData = JSON.parse(_data.data.paramData);
@@ -100,7 +100,7 @@
         				"cid" : data.cid,
         				fun:function(node){
         					E3.changeItemParam(node, "itemeEditForm");
-        				}
+        				} 
         			});
         		}
         	}).window("open");
